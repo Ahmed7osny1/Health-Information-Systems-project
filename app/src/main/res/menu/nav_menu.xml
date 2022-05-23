@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn ="nav_view"
+    >
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/ic_baseline_home_24"
+        />
+
+    <item
+        android:id="@+id/settings"
+        android:title="settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        />
+
+    <item
+        android:id="@+id/logout"
+        android:title="logout"
+        android:icon="@drawable/ic_baseline_exit_to_app_24"
+        />
+
+    <item
+        android:title="profile">
+
+        <menu>
+
+            <item
+                android:title="login"
+                android:id="@+id/login"
+                android:icon="@drawable/ic_baseline_login_24"
+                />
+
+        </menu>
+
+    </item>
+
+</menu>

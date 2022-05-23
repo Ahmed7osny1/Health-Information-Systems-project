@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/wash_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/handa"
+        />
+
+    <TextView
+        android:id="@+id/wash_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Soap on Hand"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="15dp"
+        />
+
+</LinearLayout>

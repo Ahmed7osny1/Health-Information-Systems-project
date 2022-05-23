@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android/KOVID19/app/src/main/res/drawable/ic_menu.xml" value="0.196" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/activity_home.xml" value="0.26979166666666665" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/activity_main.xml" value="0.2564814814814815" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/advice_items.xml" value="0.2230769230769231" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/fragment_fifth.xml" value="0.2578125" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/fragment_first.xml" value="0.264" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/fragment_forth.xml" value="0.27291666666666664" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/fragment_login.xml" value="0.264" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/fragment_second.xml" value="0.27291666666666664" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/fragment_splash.xml" value="0.27291666666666664" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/fragment_third.xml" value="0.2578125" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/fragment_view_pager.xml" value="0.27291666666666664" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/nav_header.xml" value="0.26979166666666665" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/navigation_layout.xml" value="0.26979166666666665" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/services_items.xml" value="0.22136752136752136" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/wash_items.xml" value="0.271875" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/menu/nav_menu.xml" value="0.26979166666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

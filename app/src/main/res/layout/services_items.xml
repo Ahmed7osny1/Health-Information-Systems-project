@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="290dp"
+    android:layout_margin="8dp"
+    >
+
+    <LinearLayout
+        android:layout_width="220dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:gravity="center"
+        >
+
+    <ImageView
+        android:id="@+id/img_services"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/vaccine"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/service_title_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Title Item"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/ColorApp"
+        android:textStyle="bold|italic"
+        />
+
+    <TextView
+        android:id="@+id/service_description_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="The Coronavirus (COVID-19) was first reported in Wuhan, Hubei, China in December 2019"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:layout_gravity="center"
+        android:gravity="center"
+        />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
