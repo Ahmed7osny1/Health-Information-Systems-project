@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="390dp"
+    android:layout_margin="10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:id="@+id/spread_img"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/spreada"
+            android:scaleType="centerCrop"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/ColorApp"
+            />
+
+        <TextView
+            android:id="@+id/spread_title"
+            android:layout_width="340dp"
+            android:layout_height="60dp"
+            android:text="Person-to-person spread as close contact with infected"
+            android:layout_gravity="center"
+            android:layout_marginTop="17dp"
+            android:textSize="23sp"
+            android:textColor="@color/ColorApp"
+            android:textStyle="bold|italic"
+            />
+
+        <TextView
+            android:id="@+id/spread_discription"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:text="The coronavirus is thought to spread mainly from person to person. This can happen between people who are in close contact with one another."
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:textSize="17sp"
+            />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

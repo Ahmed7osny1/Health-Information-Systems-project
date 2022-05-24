@@ -21,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Soap on Hand"
+        android:textColor="@color/ColorApp"
         android:textSize="20sp"
         android:textStyle="bold|italic"
         android:layout_marginTop="15dp"

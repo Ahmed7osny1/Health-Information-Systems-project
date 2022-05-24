@@ -19,6 +19,11 @@
         <entry key="..\:/Android/KOVID19/app/src/main/res/layout/nav_header.xml" value="0.26979166666666665" />
         <entry key="..\:/Android/KOVID19/app/src/main/res/layout/navigation_layout.xml" value="0.26979166666666665" />
         <entry key="..\:/Android/KOVID19/app/src/main/res/layout/services_items.xml" value="0.22136752136752136" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/spread.xml" value="0.271875" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/spread_items.xml" value="0.26871794871794874" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/symptoms.xml" value="0.27291666666666664" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/symptoms_items.xml" value="0.27291666666666664" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/transmission_items.xml" value="0.2" />
         <entry key="..\:/Android/KOVID19/app/src/main/res/layout/wash_items.xml" value="0.271875" />
         <entry key="..\:/Android/KOVID19/app/src/main/res/menu/nav_menu.xml" value="0.26979166666666665" />
       </map>

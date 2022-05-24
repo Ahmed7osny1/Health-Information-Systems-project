@@ -1,9 +1,10 @@
 package com.sriyank.kovid19.HOME
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -30,7 +31,78 @@ class HomeActivity : AppCompatActivity() {
 
         Hand_Wash()
 
+        SYMPTOMS_data()
+
+        spread_data()
+
     }
+
+    private fun spread_data() {
+
+        var MyArrayList = ArrayList<ServicesData>()
+
+        MyArrayList.add(
+            ServicesData(R.drawable.spreada,
+            "Person-to-person spread as close contact with infected",
+            "The coronavirus is thought to spread mainly from person to person. This can happen between people who are in close contact with one another."
+            )
+        )
+
+        MyArrayList.add(
+            ServicesData(R.drawable.spreadb,
+                "Touching or contact with infected surfaces or objects",
+                "A person can get COVID-19 by touching a surface or object that has the virus on it and then touching their own mouth, nose, or possibly their eyes."
+            )
+        )
+
+        MyArrayList.add(
+            ServicesData(R.drawable.spreadc,
+                "Droplets that from infected person coughs or sneezes",
+                "The coronavirus is thought to spread mainly from person to person. This can happen between people who are in close contact with one another."
+            )
+        )
+
+        rec_TRANSMISSION.layoutManager = LinearLayoutManager(this,RecyclerView.HORIZONTAL,false)
+
+        var TransmissionAdapter = TransmissionAdapter(MyArrayList)
+
+        rec_TRANSMISSION.adapter = TransmissionAdapter
+
+
+    }
+
+    private fun SYMPTOMS_data() {
+
+        var myArrayList = ArrayList<ServicesData>()
+
+        myArrayList.add(
+            ServicesData(R.drawable.symptoma,
+                "High Fever",
+                "This means you feel hot to touch on your chest or back (you do not need to measure your temperature). It is a common sign and also may appear in 2-10 days if you affected."
+            )
+        )
+
+        myArrayList.add(
+            ServicesData(R.drawable.symptomb,
+                "Continuous cough",
+                "This means coughing a lot for more than an hour, or 3 or more coughing episodes in 24 hours (if you usually have a cough, it may be worse than usual)."
+            )
+        )
+
+        myArrayList.add(
+            ServicesData(R.drawable.symptomc,
+                "Shortness of breath",
+                "Around 1 out of every 6 people who gets COVID-19 becomes seriously ill and develops difficulty breathing or shortness of breath."
+            )
+        )
+
+        rec_SYMPTOMS.layoutManager = LinearLayoutManager(this,RecyclerView.HORIZONTAL,false)
+
+        var AdviceAdapter = AdviceAdapter(myArrayList)
+        rec_SYMPTOMS.adapter = AdviceAdapter
+
+    }
+
 
     private fun Hand_Wash() {
 
@@ -154,7 +226,7 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-    fun openNavigationDrawer() {
+    fun openNavigationDrawer(view: View) {
 
         if (drawable_layout.isDrawerOpen(GravityCompat.START)) {
             drawable_layout.closeDrawer(GravityCompat.START)
@@ -163,5 +235,4 @@ class HomeActivity : AppCompatActivity() {
         }
 
     }
-
 }
