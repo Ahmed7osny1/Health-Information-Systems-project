@@ -22,7 +22,7 @@ class FifthFragment : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_fifth, container, false)
 
         view.finish.setOnClickListener {
-            findNavController().navigate(R.id.action_viewPagerFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_viewPagerFragment_to_loginActivity)
             onBoardingFinished()
         }
 

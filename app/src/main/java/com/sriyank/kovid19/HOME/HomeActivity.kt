@@ -1,6 +1,8 @@
 package com.sriyank.kovid19.HOME
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
@@ -8,11 +10,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.Request
+import com.android.volley.toolbox.Volley
+import com.sriyank.kovid19.APIAuth.MyConfig
+import com.sriyank.kovid19.APIAuth.MyRequest
 import com.sriyank.kovid19.HOME.Hand.HandAdapter
 import com.sriyank.kovid19.HOME.Hand.HandData
 import com.sriyank.kovid19.HOME.services.ServicesData
 import com.sriyank.kovid19.HOME.services.servicesAdapter
 import com.sriyank.kovid19.R
+import com.sriyank.kovid19.UI.LoginActivity
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -211,6 +218,21 @@ class HomeActivity : AppCompatActivity() {
 
         var servicesAdapter = servicesAdapter(myArrayList)
         rec_services.adapter = servicesAdapter
+
+        servicesAdapter.setonItemClickListener(object : servicesAdapter.onItemClickListener{
+
+            override fun onItemClicked(position: Int) {
+
+                when(position) {
+
+                    1 -> startActivity(Intent(this@HomeActivity,ReservePCRAnalysis::class.java))
+                    2 -> startActivity(Intent(this@HomeActivity,ContactWithDoctor::class.java))
+                    else -> startActivity(Intent(this@HomeActivity,VaccineReservation::class.java))
+
+                }
+
+            }
+        })
     }
 
     fun nav_viwer(){
@@ -220,6 +242,10 @@ class HomeActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.home -> Toast.makeText(this,"HOME",Toast.LENGTH_LONG).show()
                 R.id.settings -> Toast.makeText(this,"settings",Toast.LENGTH_LONG).show()
+                R.id.logout -> {
+                    btnLogoutClicked()
+                    Toast.makeText(this,"You Logged Out",Toast.LENGTH_LONG).show()
+                }
             }
             false
         }
@@ -235,4 +261,46 @@ class HomeActivity : AppCompatActivity() {
         }
 
     }
+
+    private fun btnLogoutClicked(){
+        Log.d("mytag", "Button logout clicked")
+        // send request
+        val queue = Volley.newRequestQueue(this)
+        val request = MyRequest(
+            this,
+            Request.Method.GET,
+            "/logout",
+            null,
+            { response ->
+                Log.d("mytag", "response = $response")
+
+                // remove token from shared prefs
+                val prefs = getSharedPreferences(MyConfig.SHARED_PREFS_FILENAME, MODE_PRIVATE)
+                val prefsEditor = prefs.edit()
+                prefsEditor.remove("token")
+                prefsEditor.apply()
+
+                // go to login screen
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            },
+            { error ->
+                val statusCode = error.networkResponse?.statusCode
+                Log.e("mytag", "Error: $error - Status Code = $statusCode")
+                // if 401 unauthorized
+                if(statusCode == 401){
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                // if unknown error
+                else {
+                    Toast.makeText(this, "Connection error", Toast.LENGTH_SHORT).show()
+                }
+            }
+        )
+        queue.add(request)
+    }
+
 }

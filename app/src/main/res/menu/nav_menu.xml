@@ -17,11 +17,6 @@
         android:icon="@drawable/ic_baseline_settings_24"
         />
 
-    <item
-        android:id="@+id/logout"
-        android:title="logout"
-        android:icon="@drawable/ic_baseline_exit_to_app_24"
-        />
 
     <item
         android:title="profile">
@@ -29,9 +24,15 @@
         <menu>
 
             <item
-                android:title="login"
-                android:id="@+id/login"
-                android:icon="@drawable/ic_baseline_login_24"
+                android:id="@+id/profile"
+                android:title="Profile"
+                android:icon="@drawable/ic_baseline_person_24"
+                />
+
+            <item
+                android:id="@+id/logout"
+                android:title="Logout"
+                android:icon="@drawable/ic_baseline_exit_to_app_24"
                 />
 
         </menu>

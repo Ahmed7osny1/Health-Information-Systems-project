@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sriyank.kovid19">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,7 +14,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KOVID19"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".UI.successfulSend"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ForgetPassword"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ContinueRegister"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Register"
+            android:exported="false" />
+        <activity
+            android:name=".HOME.ReservePCRAnalysis"
+            android:exported="false" />
+        <activity
+            android:name=".HOME.ContactWithDoctor"
+            android:exported="false" />
+        <activity
+            android:name=".HOME.VaccineReservation"
+            android:exported="false" />
+        <activity
+            android:name=".UI.LoginActivity"
+            android:exported="false" />
         <activity
             android:name=".HOME.HomeActivity"
             android:exported="false" />
