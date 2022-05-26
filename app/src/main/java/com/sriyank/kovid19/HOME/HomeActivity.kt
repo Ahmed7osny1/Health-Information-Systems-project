@@ -209,7 +209,7 @@ class HomeActivity : AppCompatActivity() {
         )
 
         myArrayList.add(
-            ServicesData(R.drawable.contact,
+            ServicesData(R.drawable.dose,
             "Contact With Doctor",
             "The Coronavirus (COVID-19) was first reported in Wuhan, Hubei, China in December 2019")
         )

@@ -1,8 +1,8 @@
 package com.sriyank.kovid19.UI
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.sriyank.kovid19.R
 import kotlinx.android.synthetic.main.activity_register.*
 
@@ -12,7 +12,14 @@ class Register : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         con.setOnClickListener {
-            startActivity(Intent(this,ContinueRegister::class.java))
+            val intent = Intent(baseContext, ContinueRegister::class.java)
+            intent.putExtra("FirstName", fname.text.toString())
+            intent.putExtra("LastName", lname.text.toString())
+            intent.putExtra("ssn", assn.text.toString())
+            intent.putExtra("email", emailInput.text.toString())
+            intent.putExtra("address", addressInputEditText.text.toString())
+
+            startActivity(intent)
         }
 
         backBtn.setOnClickListener{ onBackPressed() }
@@ -20,5 +27,8 @@ class Register : AppCompatActivity() {
         noAccountTv.setOnClickListener { onBackPressed() }
 
 
+
+
     }
+
 }

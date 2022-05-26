@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/KOVID19/app/src/main/res/drawable/ic_baseline_privacy_tip_24.xml" value="0.152" />
         <entry key="..\:/Android/KOVID19/app/src/main/res/drawable/ic_menu.xml" value="0.196" />
         <entry key="..\:/Android/KOVID19/app/src/main/res/drawable/shap_btn.xml" value="0.191" />
         <entry key="..\:/Android/KOVID19/app/src/main/res/layout/activity_contact_with_doctor.xml" value="0.2" />
@@ -11,7 +12,7 @@
         <entry key="..\:/Android/KOVID19/app/src/main/res/layout/activity_home.xml" value="0.26979166666666665" />
         <entry key="..\:/Android/KOVID19/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Android/KOVID19/app/src/main/res/layout/activity_main.xml" value="0.2564814814814815" />
-        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/activity_register.xml" value="0.27291666666666664" />
+        <entry key="..\:/Android/KOVID19/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/Android/KOVID19/app/src/main/res/layout/activity_reserve_pcranalysis.xml" value="0.27291666666666664" />
         <entry key="..\:/Android/KOVID19/app/src/main/res/layout/activity_successful_send.xml" value="0.2" />
         <entry key="..\:/Android/KOVID19/app/src/main/res/layout/activity_vaccine_reservation.xml" value="0.27291666666666664" />
