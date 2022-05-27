@@ -42,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun loginClicked(){
 
-        if(validateData()) {
+        //if(validateData()) {
             // data we send in the request: Email and password
             val params = JSONObject()
             params.put("email", mEditEmail.text.toString())
@@ -94,16 +94,16 @@ class LoginActivity : AppCompatActivity() {
                 }
             )
             queue.add(request)
-        }
+        //}
     }
 
-    private fun validateData(): Boolean {
+   /* private fun validateData(): Boolean {
 
         var emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
         if((mEditEmail.text.toString().trim().matches(emailPattern.toRegex()) &&
                     mEditEmail.text.toString().trim().isNotEmpty()) &&
-            (mEditPassword.text.toString().isNotEmpty() && mEditPassword.text.toString().length >= 5))
+            (mEditPassword.text.toString().isNotEmpty() && mEditPassword.text.toString().length >= 4))
             return true
         else {
 
@@ -114,11 +114,11 @@ class LoginActivity : AppCompatActivity() {
 
             if(mEditPassword.text.toString().isEmpty())
                 Toast.makeText(this, "Enter your Password", Toast.LENGTH_LONG).show()
-            else if (mEditPassword.text.toString().length < 5)
-                Toast.makeText(this, "Enter valid Password > 9", Toast.LENGTH_LONG).show()
+            else if (mEditPassword.text.toString().length < 4)
+                Toast.makeText(this, "Enter valid Password > 4", Toast.LENGTH_LONG).show()
 
             return false
 
         }
-    }
+    }*/
 }

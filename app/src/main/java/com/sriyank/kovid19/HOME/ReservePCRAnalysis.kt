@@ -158,7 +158,7 @@ class ReservePCRAnalysis : AppCompatActivity() {
         val datePickerDialog = DatePickerDialog(this,
             DatePickerDialog.OnDateSetListener
             { view, year, monthOfYear, dayOfMonth ->
-                DateDose.setText("$dayOfMonth  /  ${(monthOfYear + 1)}  /  $year")
+                DateDose.setText("$year-${(monthOfYear + 1)}-$dayOfMonth")
             }, year, month, day
         )
         //currentTimeMillis

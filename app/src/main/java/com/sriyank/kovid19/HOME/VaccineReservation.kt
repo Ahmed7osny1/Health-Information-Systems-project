@@ -167,7 +167,7 @@ class VaccineReservation : AppCompatActivity() {
         val datePickerDialog = DatePickerDialog(this,
             DatePickerDialog.OnDateSetListener
             { view, year, monthOfYear, dayOfMonth ->
-                Date.setText("$dayOfMonth  /  ${(monthOfYear + 1)}  /  $year")
+                Date.setText("$year-${(monthOfYear + 1)}-$dayOfMonth")
             }, year, month, day
         )
         //currentTimeMillis

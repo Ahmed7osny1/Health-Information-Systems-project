@@ -16,19 +16,19 @@ class Register : AppCompatActivity() {
 
             if(validate()) {
 
-                val intent = Intent(baseContext, ContinueRegister::class.java)
-                intent.putExtra("FirstName", fname.text.toString())
-                intent.putExtra("LastName", lname.text.toString())
-                intent.putExtra("ssn", assn.text.toString())
-                intent.putExtra("email", emailInput.text.toString())
-                intent.putExtra("address", addressInputEditText.text.toString())
+            val intent = Intent(this, ContinueRegister::class.java)
+            intent.putExtra("FirstName", fname.text.toString())
+            intent.putExtra("LastName", lname.text.toString())
+            intent.putExtra("ssn", assn.text.toString())
+            intent.putExtra("email", emailInput.text.toString())
+            intent.putExtra("address", addressInputEditText.text.toString())
 
-                startActivity(intent)
+            startActivity(intent)
             }
 
         }
 
-        backBtn.setOnClickListener{ onBackPressed() }
+        backBtn.setOnClickListener { onBackPressed() }
 
         noAccountTv.setOnClickListener { onBackPressed() }
 
@@ -38,12 +38,14 @@ class Register : AppCompatActivity() {
 
         var emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
-        if(fname.text.toString().isNotEmpty() && lname.text.toString().isNotEmpty()
-            && (assn.text.toString().isNotEmpty() && assn.text.toString().length == 14 )
+        if (fname.text.toString().isNotEmpty() && lname.text.toString().isNotEmpty()
+            && (assn.text.toString().isNotEmpty() && assn.text.toString().length == 14)
             && (emailInput.text.toString().trim().matches(emailPattern.toRegex()) &&
-                    emailInput.text.toString().trim().isEmpty()) &&
-            addressInputEditText.text.toString().isNotEmpty()) { return true }
-        else {
+                    emailInput.text.toString().trim().isNotEmpty()) &&
+            addressInputEditText.text.toString().isNotEmpty()
+        ) {
+            return true
+        } else {
 
             if (!emailInput.text.toString().trim().matches(emailPattern.toRegex()))
                 Toast.makeText(this, "Enter a valid Email", Toast.LENGTH_LONG).show()
@@ -56,16 +58,15 @@ class Register : AppCompatActivity() {
             if (lname.text.toString().isEmpty())
                 Toast.makeText(this, "Enter your Last Name", Toast.LENGTH_LONG).show()
 
-            if(assn.text.toString().isEmpty())
+            if (assn.text.toString().isEmpty())
                 Toast.makeText(this, "Enter your SSN", Toast.LENGTH_LONG).show()
-            else if(assn.text.toString().length != 14)
+            else if (assn.text.toString().length != 14)
                 Toast.makeText(this, "Enter your Valid SSN (14 Number)", Toast.LENGTH_LONG).show()
 
-            if(addressInputEditText.text.toString().isEmpty())
+            if (addressInputEditText.text.toString().isEmpty())
                 Toast.makeText(this, "Enter your Address", Toast.LENGTH_LONG).show()
 
             return false
         }
     }
-
 }
