@@ -3,11 +3,20 @@ package com.sriyank.kovid19.UI
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.android.volley.Request
+import com.android.volley.toolbox.Volley
+import com.sriyank.kovid19.APIAuth.MyConfig
+import com.sriyank.kovid19.APIAuth.MyRequest
+import com.sriyank.kovid19.HOME.HomeActivity
 import com.sriyank.kovid19.R
 import kotlinx.android.synthetic.main.activity_forget_password.*
+import kotlinx.android.synthetic.main.activity_forget_password.mEditEmail
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
+import org.json.JSONObject
 
 class ForgetPassword : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,15 +34,62 @@ class ForgetPassword : AppCompatActivity() {
 
                 if(!mEditEmail.text.toString().trim().matches(emailPattern.toRegex()))
                     Toast.makeText(this, "Enter a valid Email", Toast.LENGTH_LONG).show()
-                else if(mEditEmail.text.toString().isEmpty())
+                if(mEditEmail.text.toString().isEmpty())
                     Toast.makeText(this, "Enter your Email", Toast.LENGTH_LONG).show()
 
             }
             else {
-                startActivity(Intent(this, successfulSend::class.java))
+                PasswordForget()
             }
 
         }
+
+    }
+    private fun PasswordForget() {
+
+        val params = JSONObject()
+        params.put("email", mEditEmail.text.toString())
+
+        Log.d("mytag", "Button clicked")
+
+        // send request
+        val queue = Volley.newRequestQueue(this)
+        val request = MyRequest(
+            this,
+            Request.Method.POST,
+            "/send-reset-email",
+            params,
+            { response ->
+
+                Log.d("mytag", "response = $response")
+
+                if("$response" == "{\"msg\":\"Email sent Successfully\"}") {
+                    startActivity(
+                        Intent(
+                            this,
+                            successfulSend::class.java
+                        )
+                    )
+                }else{
+                    Toast.makeText(this, "Email not Registered", Toast.LENGTH_SHORT).show()
+                }
+
+
+                if (response.has("error")) {
+                    val errorMesssage = response.getString("error")
+                    Toast.makeText(this, "$errorMesssage", Toast.LENGTH_SHORT).show()
+
+                }
+            },
+            { error ->
+                Log.e(
+                    "mytag",
+                    "Error: $error - Status Code = ${error.networkResponse?.statusCode}"
+                )
+                Toast.makeText(this, "Connection error", Toast.LENGTH_SHORT).show()
+            }
+        )
+        queue.add(request)
 
     }
 }
