@@ -113,7 +113,6 @@
 
 
                 <!--forget passsword-->
-
                 <TextView
                     android:id="@+id/forgetTv"
                     android:layout_width="wrap_content"

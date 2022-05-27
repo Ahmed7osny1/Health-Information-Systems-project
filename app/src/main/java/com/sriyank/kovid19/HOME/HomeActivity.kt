@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -14,12 +13,15 @@ import com.android.volley.Request
 import com.android.volley.toolbox.Volley
 import com.sriyank.kovid19.APIAuth.MyConfig
 import com.sriyank.kovid19.APIAuth.MyRequest
+import com.sriyank.kovid19.HOME.Adapter.AdviceAdapter
+import com.sriyank.kovid19.HOME.Adapter.TransmissionAdapter
 import com.sriyank.kovid19.HOME.Hand.HandAdapter
 import com.sriyank.kovid19.HOME.Hand.HandData
 import com.sriyank.kovid19.HOME.services.ServicesData
 import com.sriyank.kovid19.HOME.services.servicesAdapter
 import com.sriyank.kovid19.R
 import com.sriyank.kovid19.UI.LoginActivity
+import com.sriyank.kovid19.UI.profile
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -240,12 +242,13 @@ class HomeActivity : AppCompatActivity() {
         nav_view.setNavigationItemSelectedListener {
 
             when(it.itemId){
-                R.id.home -> Toast.makeText(this,"HOME",Toast.LENGTH_LONG).show()
+                R.id.home -> drawable_layout.closeDrawer(GravityCompat.START)
                 R.id.settings -> Toast.makeText(this,"settings",Toast.LENGTH_LONG).show()
                 R.id.logout -> {
                     btnLogoutClicked()
                     Toast.makeText(this,"You Logged Out",Toast.LENGTH_LONG).show()
                 }
+                R.id.profile -> startActivity(Intent(this,profile::class.java))
             }
             false
         }
@@ -263,6 +266,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun btnLogoutClicked(){
+
         Log.d("mytag", "Button logout clicked")
         // send request
         val queue = Volley.newRequestQueue(this)

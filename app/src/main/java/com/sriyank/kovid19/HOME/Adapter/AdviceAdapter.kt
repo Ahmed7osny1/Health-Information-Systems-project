@@ -1,4 +1,4 @@
-package com.sriyank.kovid19.HOME
+package com.sriyank.kovid19.HOME.Adapter
 
 import android.view.LayoutInflater
 import android.view.View

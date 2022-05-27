@@ -17,5 +17,6 @@ class successfulSend : AppCompatActivity() {
         Handler().postDelayed({
             startActivity(Intent(this,LoginActivity::class.java))
         },3500)
+
     }
 }
